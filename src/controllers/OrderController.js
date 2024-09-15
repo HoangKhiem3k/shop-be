@@ -22,7 +22,9 @@ const createOrder = async (req, res) => {
         data: null,
       });
     }
+
     const response = await OrderService.createOrder(req.body);
+
     const { data, status, typeError, message, statusMessage } = response;
     return res.status(status).json({
       typeError,
@@ -176,7 +178,6 @@ const updateOrder = async (req, res) => {
   }
 };
 
-
 const updateStatusOrder = async (req, res) => {
   try {
     const orderId = req.params.orderId;
@@ -310,5 +311,5 @@ module.exports = {
   cancelOrderProduct,
   getDetailsOrderOfMe,
   cancelOrderOfMe,
-  updateStatusOrder
+  updateStatusOrder,
 };

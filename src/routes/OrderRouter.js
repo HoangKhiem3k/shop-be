@@ -10,11 +10,7 @@ router.post(
   OrderController.updateStatusOrder
 );
 
-router.post(
-  "/",
-  AuthPermission("", true),
-  OrderController.createOrder
-);
+router.post("/", AuthPermission("", true), OrderController.createOrder);
 
 router.put(
   "/:id",
@@ -22,11 +18,7 @@ router.put(
   OrderController.updateOrder
 );
 
-router.get(
-  "/me",
-  AuthPermission("", true),
-  OrderController.getAllOrderOfMe
-);
+router.get("/me", AuthPermission("", true), OrderController.getAllOrderOfMe);
 
 router.get(
   "/:orderId",
@@ -39,7 +31,6 @@ router.get(
   AuthPermission(CONFIG_PERMISSIONS.MANAGE_ORDER.ORDER.VIEW),
   OrderController.getAllOrder
 );
-
 
 router.post(
   "/cancel/:orderId",
@@ -66,7 +57,5 @@ router.get(
   AuthPermission("", true),
   OrderController.getDetailsOrderOfMe
 );
-
-
 
 module.exports = router;

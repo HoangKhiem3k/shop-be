@@ -70,6 +70,7 @@ const createOrder = (newOrder) => {
       email,
       deliveryMethod,
     } = newOrder;
+
     try {
       const promises = newOrder.orderItems.map(updateProductStock);
       const results = await Promise.all(promises);
@@ -127,7 +128,7 @@ const createOrder = (newOrder) => {
           recipientIds,
           deviceTokens,
         });
-        await EmailService.sendEmailCreateOrder(email, orderItems);
+        // await EmailService.sendEmailCreateOrder(email, orderItems);
 
         if (createdOrder) {
           resolve({
@@ -140,7 +141,6 @@ const createOrder = (newOrder) => {
         }
       }
     } catch (e) {
-      //   console.log('e', e)
       reject(e);
     }
   });
@@ -285,8 +285,8 @@ const updateStatusOrder = (id, data) => {
         return;
       }
 
-      if(String(data.status)) {
-        existingOrder.status = data.status
+      if (String(data.status)) {
+        existingOrder.status = data.status;
       }
 
       if (data.isPaid) {

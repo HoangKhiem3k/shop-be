@@ -31,7 +31,7 @@ const initializeDB = async () => {
         const roleAdmin = await Role.findOne({ name: "Admin" });
         if (roleAdmin) {
           const defaultUser = new User({
-            email: "admin_khiem@gmail.com",
+            email: "khiem.test.service@gmail.com",
             password: hash,
             role: roleAdmin,
           });
