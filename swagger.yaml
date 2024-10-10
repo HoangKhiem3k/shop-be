@@ -7,7 +7,7 @@ info:
     email: lttd0204@gmail.com
   version: 1.0.11
 servers:
-  - url: http://localhost:3001
+  - url: https://shop-be-ilwy.onrender.com
 tags:
   - name: auth
     description: Everything about auth
