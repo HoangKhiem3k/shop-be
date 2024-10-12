@@ -108,7 +108,7 @@ paths:
                 email:
                   type: string
                   format: email
-                  example: admin@gmail.com
+                  example: khiem.test.service@gmail.com
                 password:
                   type: string
                   example: 123456789Kha@
@@ -675,7 +675,7 @@ paths:
                 email:
                   type: string
                   format: email
-                  example: admin@gmail.com
+                  example: khiem.test.service@gmail.com
               required:
                 - email
           application/xml:
@@ -3168,7 +3168,7 @@ paths:
                 productId:
                   type: string
                   format: uuid
-                  example: admin@gmail.com
+                  example: khiem.test.service@gmail.com
               required:
                 - productId
           application/xml:
@@ -3231,7 +3231,7 @@ paths:
                 productId:
                   type: string
                   format: uuid
-                  example: admin@gmail.com
+                  example: khiem.test.service@gmail.com
               required:
                 - productId
           application/xml:
