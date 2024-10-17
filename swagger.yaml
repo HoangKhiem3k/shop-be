@@ -7,7 +7,7 @@ info:
     email: ledohoangkhiem3k@gmail.com
   version: 1.0.11
 servers:
-  - url: https://shop-be-ilwy.onrender.com
+  - url: http://localhost:3001
 tags:
   - name: auth
     description: Everything about auth
@@ -35,10 +35,10 @@ paths:
                 email:
                   type: string
                   format: email
-                  example: admin_khiem@gmail.com
+                  example: khiem.test.service@gmail.com
                 password:
                   type: string
-                  example: 123456789Khiem@
+                  example: 1234567890Kh@
               required:
                 - email
                 - password
@@ -3218,7 +3218,7 @@ paths:
     post:
       tags:
         - products
-      summary: Unike product by idProduct
+      summary: Unlike product by idProduct
       description: Unlike product by idProduct
       operationId: unlikeProduct
       requestBody:

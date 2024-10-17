@@ -7,7 +7,6 @@ const { CONFIG_PERMISSIONS } = require("./configs");
 
 const initializeDB = async () => {
   try {
-    // Kết nối đến cơ sở dữ liệu
     await mongoose
       .connect(`${process.env.MONGO_DB}`, {
         useNewUrlParser: true,
@@ -27,7 +26,7 @@ const initializeDB = async () => {
         await defaultAdminRole.save();
         await defaultBasicRole.save();
 
-        const hash = bcrypt.hashSync("123456789Khiem@", 10);
+        const hash = bcrypt.hashSync("1234567890Kh@", 10);
         const roleAdmin = await Role.findOne({ name: "Admin" });
         if (roleAdmin) {
           const defaultUser = new User({
@@ -41,12 +40,8 @@ const initializeDB = async () => {
       .then(() => {
         mongoose.connection.close();
       })
-      .catch((e) => {
-        // console.log("Error init data", e);
-      });
-  } catch (error) {
-    // console.log("Error init data", error);
-  }
+      .catch((e) => {});
+  } catch (error) {}
 };
 
 dotenv.config();
